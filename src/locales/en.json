@@ -1,4 +1,6 @@
 {
 	"message": "foobar EN",
-	"select.language": "select your language:"
+	"select.language": "select your language:",
+	"select.layers": "Select your favorite amount of layers (multiple is allowed):",
+	"layers": "layers"
 }

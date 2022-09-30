@@ -1,4 +1,6 @@
 {
 	"message": "foobar IT",
-	"select.language": "seleziona la sua lingua:"
+	"select.language": "seleziona la tua lingua:",
+	"select.layers": "Seleziona la tua quantità preferita di livelli (sono consentiti più livelli):",
+	"layers": "strati"
 }
