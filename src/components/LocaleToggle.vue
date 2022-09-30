@@ -1,17 +1,39 @@
 <template>
-  <v-main></v-main>
+  <v-btn icon @click="dialog = true">
+    <v-icon color="primary"> mdi-web </v-icon>
+  </v-btn>
+  <v-dialog v-model="dialog" fullscreen>
+    <v-card>
+      <v-container class="d-flex flex-column">
+        <v-btn class="ml-auto" @click="dialog = false" icon flat>
+          <v-icon color="primary">mdi-close</v-icon>
+        </v-btn>
+        <v-row>
+          <v-col cols="3" v-for="loc in availableLocales" :key="loc">
+            <v-btn
+              color="secondary"
+              :variant="loc === locale ? 'elevated' : 'outlined'"
+              @click="toggleLocale(loc)"
+            >
+              {{ loc }}
+            </v-btn>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-card>
+  </v-dialog>
 </template>
 
 <script lang="ts" setup>
 import { useI18n } from "vue-i18n";
-import { onMounted } from "vue";
+import { ref } from "vue";
 const { availableLocales, locale } = useI18n();
-onMounted(() => {
-  availableLocales.forEach((loc) => console.log("available locale: ", loc));
-  console.log("current locale: ", locale.value);
-  locale.value = "it";
-  console.log("current locale: ", locale.value);
-});
+const dialog = ref(false);
+const toggleLocale = (newLocale: string) => {
+  if (newLocale === locale.value) return;
+  locale.value = newLocale;
+  dialog.value = false;
+};
 </script>
 
 <style></style>
