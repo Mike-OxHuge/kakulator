@@ -3,7 +3,9 @@
     <v-container class="d-flex align-center justify-space-between">
       <ThemeToggler />
       <LocaleToggler />
-      <span class="text-h6 text-uppercase font-weight-black"> kakulator </span>
+      <span class="text-h6 text-uppercase font-weight-black text-secondary">
+        kakulator
+      </span>
       <Profile />
     </v-container>
   </v-app-bar>

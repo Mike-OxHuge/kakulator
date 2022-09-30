@@ -8,6 +8,9 @@
         <v-btn class="ml-auto" @click="dialog = false" icon flat>
           <v-icon color="primary">mdi-close</v-icon>
         </v-btn>
+        <span class="mx-auto my-3 text-overline text-h5 text-primary">
+          {{ t("select.language") }}
+        </span>
         <v-row>
           <v-col cols="3" v-for="loc in availableLocales" :key="loc">
             <v-btn
@@ -26,14 +29,21 @@
 
 <script lang="ts" setup>
 import { useI18n } from "vue-i18n";
-import { ref } from "vue";
-const { availableLocales, locale } = useI18n();
+import { ref, onMounted } from "vue";
+const { availableLocales, locale, t } = useI18n();
 const dialog = ref(false);
 const toggleLocale = (newLocale: string) => {
   if (newLocale === locale.value) return;
   locale.value = newLocale;
   dialog.value = false;
 };
+onMounted(() => {
+  if (!window.navigator.language) return;
+  availableLocales.forEach((loc) => {
+    if (!window.navigator.language.includes(loc)) return;
+    locale.value = loc;
+  });
+});
 </script>
 
 <style></style>
