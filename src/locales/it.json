@@ -1,8 +1,13 @@
 {
-	"message": "foobar IT",
 	"select.language": "seleziona la tua lingua:",
 	"select.layers": "Seleziona la tua quantità preferita di livelli (sono consentiti più livelli):",
 	"layers": "strati",
 	"profile.activities": "Le tue attività:",
-	"profile.add.activities": "Aggiungi nuova attività"
+	"profile.activities.name": "nome",
+	"profile.add.activities": "Aggiungere nuova",
+	"profile.activity.form.title": "compila i campi",
+	"profile.activity.delete": "elimina",
+	"profile.activity.sheets": "fogli",
+	"profile.activity.save": "salva",
+	"activities.set.layers": "fogli di carta a strati {layer} per uso"
 }

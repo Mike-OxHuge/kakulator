@@ -5,9 +5,15 @@
     </v-btn>
     <v-dialog v-model="addNewDialog">
       <v-card>
-        <v-card-title> fill the fields </v-card-title>
+        <v-btn class="ml-auto" @click="addNewDialog = false" icon flat>
+          <v-icon color="primary">mdi-close</v-icon>
+        </v-btn>
+        <v-card-title>{{ t("profile.activity.form.title") }} </v-card-title>
         <v-container>
-          <v-text-field label="name" v-model="newActivity.name" />
+          <v-text-field
+            :label="t('profile.activities.name')"
+            v-model="newActivity.name"
+          />
           <v-text-field
             v-for="layer in listofLayers"
             :key="layer"
@@ -17,7 +23,9 @@
           />
         </v-container>
         <v-card-actions>
-          <v-btn @click="addActivity" block color="primary"> Add </v-btn>
+          <v-btn @click="addActivity" block color="primary">
+            {{ t("profile.activity.save") }}
+          </v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -27,21 +35,21 @@
         v-for="action in useActivity.activities"
         :key="action.id"
       >
-        <v-expansion-panel-title>
+        <v-expansion-panel-title color="secondary">
           {{ action.name }}
         </v-expansion-panel-title>
         <v-expansion-panel-text>
           <p v-if="action.per4 !== 0">
             {{ action.per4 }}x<v-icon size="x-large">mdi-paper-roll</v-icon>
-            sheets
+            {{ t("profile.activity.sheets") }}
           </p>
           <p v-if="action.per3 !== 0">
             {{ action.per3 }}x<v-icon size="default">mdi-paper-roll</v-icon>
-            sheets
+            {{ t("profile.activity.sheets") }}
           </p>
           <p v-if="action.per2 !== 0">
             {{ action.per2 }}x<v-icon size="x-small">mdi-paper-roll</v-icon>
-            sheets
+            {{ t("profile.activity.sheets") }}
           </p>
           <v-btn
             color="error"
@@ -50,7 +58,7 @@
             block
             @click="useActivity.removeActivity(action)"
           >
-            delete
+            {{ t("profile.activity.delete") }}
           </v-btn>
         </v-expansion-panel-text>
       </v-expansion-panel>

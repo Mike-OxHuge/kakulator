@@ -1,10 +1,13 @@
 {
-	"message": "foobar EN",
 	"select.language": "select your language:",
 	"select.layers": "Select your favorite amount of layers (multiple is allowed):",
 	"layers": "layers",
 	"profile.activities": "Your activities:",
+	"profile.activities.name": "name",
 	"profile.add.activities": "Add new",
-	"activities.set.layers": "sheets of {layer}-layer paper per use",
-	"activity.add.New": "hello, {name}!`"
+	"profile.activity.form.title": "fill the fields",
+	"profile.activity.delete": "delete",
+	"profile.activity.sheets": "sheets",
+	"profile.activity.save": "save",
+	"activities.set.layers": "sheets of {layer}-layer paper per use"
 }
