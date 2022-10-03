@@ -2,5 +2,9 @@
 	"message": "foobar EN",
 	"select.language": "select your language:",
 	"select.layers": "Select your favorite amount of layers (multiple is allowed):",
-	"layers": "layers"
+	"layers": "layers",
+	"profile.activities": "Your activities:",
+	"profile.add.activities": "Add new",
+	"activities.set.layers": "sheets of {layer}-layer paper per use",
+	"activity.add.New": "hello, {name}!`"
 }

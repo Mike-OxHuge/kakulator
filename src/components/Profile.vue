@@ -4,13 +4,13 @@
   </v-btn>
   <v-dialog v-model="dialog" fullscreen>
     <v-card>
-      <v-container class="d-flex flex-column">
+      <v-container class="d-flex flex-column justify-space-between">
         <v-btn class="ml-auto" @click="dialog = false" icon flat>
           <v-icon color="primary">mdi-close</v-icon>
         </v-btn>
         <v-row dense>
           <v-col cols="12">
-            <p class="text-center text-secondary">
+            <p class="text-caption text-center text-secondary">
               {{ t("select.layers") }}
             </p>
           </v-col>
@@ -25,7 +25,12 @@
             </v-btn>
           </v-col>
         </v-row>
-        <p v-if="isSelected">FOOBAR</p>
+        <v-container fluid v-if="isSelected">
+          <p class="text-caption text-center text-secondary">
+            {{ t("profile.activities") }}
+          </p>
+          <ActivityControl />
+        </v-container>
       </v-container>
     </v-card>
   </v-dialog>
@@ -33,12 +38,13 @@
 
 <script lang="ts" setup>
 import { ref, onMounted, computed } from "vue";
-import type { ComputedRef, Ref } from "vue";
 import { useI18n } from "vue-i18n";
 import { useUserStore } from "../stores";
+import ActivityControl from "./ActivityControl.vue";
 const userSettings = useUserStore();
 const { t } = useI18n();
 const dialog = ref(false);
+const acivitytDialog = ref(false);
 
 const userChoices = computed(() => {
   return Object.entries(userSettings.choices) as [
@@ -56,12 +62,6 @@ const isSelected = computed(() => {
     } else return;
   });
   return result;
-});
-
-onMounted(() => {
-  Object.entries(userSettings.choices).forEach((choice) => {
-    console.log(choice);
-  });
 });
 </script>
 
