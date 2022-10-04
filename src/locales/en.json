@@ -9,6 +9,7 @@
 	"profile.activity.delete": "delete",
 	"profile.activity.sheets": "sheets",
 	"profile.activity.save": "save",
+	"profile.set.currency": "set your currency",
 	"activities.set.layers": "sheets of {layer}-layer paper per use",
 	"main.compare.more": "add to comparison",
 	"main.missing.settings": "missing settings. Please visit your profile."

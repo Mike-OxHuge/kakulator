@@ -10,7 +10,8 @@
             <v-icon color="primary">mdi-close</v-icon>
           </v-btn>
           <v-text-field
-            label="currency"
+            v-model="currency"
+            :label="t('profile.set.currency')"
             :placeholder="userSettings.currency.toString()"
           />
         </div>
@@ -43,14 +44,14 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed } from "vue";
+import { ref, computed, watchEffect } from "vue";
 import { useI18n } from "vue-i18n";
 import { useUserStore } from "../stores";
 import ActivityControl from "./ActivityControl.vue";
 const userSettings = useUserStore();
 const { t } = useI18n();
 const dialog = ref(false);
-const acivitytDialog = ref(false);
+const currency = ref("");
 
 const userChoices = computed(() => {
   return Object.entries(userSettings.choices) as [
@@ -68,6 +69,10 @@ const isSelected = computed(() => {
     } else return;
   });
   return result;
+});
+watchEffect(() => {
+  if (currency.value) userSettings.setCurrency(currency.value);
+  if (currency.value == "") userSettings.setCurrency("€");
 });
 </script>
 

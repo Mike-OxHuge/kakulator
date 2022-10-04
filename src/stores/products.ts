@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-interface ProductType {
+export interface ProductType {
 	id?: String;
 	name: String;
 	price: Number;
@@ -64,6 +64,9 @@ export const useProductStore = defineStore("storeProduct", {
 		addProduct(product: ProductType) {
 			const id = new Date().toString();
 			return this.products.push({ ...product, id });
+		},
+		deleteProduct(product: ProductType) {
+			return this.products.filter((prod) => prod.id !== product.id);
 		},
 	},
 

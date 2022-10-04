@@ -20,6 +20,9 @@ export const useUserStore = defineStore("storeUser", {
 		setChoices(key: keyof typeof this.choices, value: boolean) {
 			this.choices[key] = value;
 		},
+		setCurrency(currency: string) {
+			this.currency = currency;
+		},
 	},
 
 	persist: {
