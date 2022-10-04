@@ -32,17 +32,40 @@
 		</template>
 	</v-expansion-panel-title>
 	<v-expansion-panel-text>
-		<v-container> results </v-container>
+		<v-container>
+			<v-icon>mdi-delete</v-icon>
+			<p>a price of one:</p>
+			<v-icon>mdi-heart-outline</v-icon>
+			<v-icon>mdi-heart</v-icon>
+			<v-container
+				v-for="activity in useActivity.activities"
+				:key="activity.id"
+			>
+				<Result :activity="activity" :product="product" />
+			</v-container>
+		</v-container>
 	</v-expansion-panel-text>
 </template>
 
 <script lang="ts" setup>
-	import { defineProps } from "vue";
-	import { useUserStore, useProductStore } from "../stores";
-	import type { ProductType } from "../stores/products";
+	import Result from "./Result.vue";
+	import { defineProps, onMounted } from "vue";
+	import { useUserStore, useProductStore, useActivityStore } from "../stores";
+	const props = defineProps(["product"]);
 	const userSettings = useUserStore();
 	const useProduct = useProductStore();
-	defineProps<{
-		product: ProductType;
-	}>();
+	const useActivity = useActivityStore();
+	// onMounted(() => {
+	// 	const { price, rolls, sheets, layers } = props.product;
+	// 	const amountOfSheets = sheets * rolls;
+	// 	const pricePerSheet = price / amountOfSheets;
+	// 	useActivity.activities.forEach((act) => {
+	// 		const multiplyer = act[`per${layers}`] as number;
+	// 		const result = pricePerSheet * multiplyer;
+	// 		console.log(
+	// 			`a price of one ${act.name} will be ${userSettings.currency}${result}`
+	// 		);
+	// 	});
+	// 	console.log(pricePerSheet);
+	// });
 </script>

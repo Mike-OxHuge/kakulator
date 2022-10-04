@@ -19,44 +19,24 @@ const productSchema: ProductType = {
 interface ResultType {
 	id: String;
 	name: String;
-	prices: { activity: String; price: Number }[];
+	price: Number;
 }
 
 const resultSchema: ResultType = {
 	id: "",
 	name: "",
-	prices: [
-		{
-			activity: "",
-			price: 0,
-		},
-	],
+	price: 0,
 };
 
 interface StateType {
-	// product: ProductType;
 	products: ProductType[];
-	// result: ResultType;
 	results: ResultType[];
 }
 
 export const useProductStore = defineStore("storeProduct", {
 	state(): StateType {
 		return {
-			// product: {
-			// 	id: "",
-			// 	name: "",
-			// 	price: 0,
-			// 	rolls: 0,
-			// 	sheets: 0,
-			// 	layers: 0,
-			// },
 			products: [],
-			// result: {
-			// 	id: "",
-			// 	name: "",
-			// 	prices: [{ activity: "", price: 0 }],
-			// },
 			results: [],
 		};
 	},
@@ -67,6 +47,10 @@ export const useProductStore = defineStore("storeProduct", {
 		},
 		deleteProduct(product: ProductType) {
 			return this.products.filter((prod) => prod.id !== product.id);
+		},
+		addResult(result: ResultType) {
+			const id = new Date().toString();
+			return this.results.push({ ...result, id });
 		},
 	},
 
