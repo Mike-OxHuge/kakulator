@@ -9,5 +9,7 @@
 	"profile.activity.delete": "elimina",
 	"profile.activity.sheets": "fogli",
 	"profile.activity.save": "salva",
-	"activities.set.layers": "fogli di carta a strati {layer} per uso"
+	"activities.set.layers": "fogli di carta a strati {layer} per uso",
+	"main.compare.more": "aggiungere al confronto",
+	"main.missing.settings": "impostazioni mancanti. Si prega di visitare il tuo profilo."
 }

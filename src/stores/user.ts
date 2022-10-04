@@ -1,23 +1,19 @@
 import { defineStore } from "pinia";
 
 export const useUserStore = defineStore("storeUser", {
-	state() {
+	state(): {
+		choices: {
+			[k: string]: boolean;
+		};
+		currency: String;
+	} {
 		return {
 			choices: {
 				includeTwoLayers: false,
-				includeThreeLayers: true,
+				includeThreeLayers: false,
 				includeFourLayers: false,
 			},
-			activities: [
-				{
-					name: "pee",
-					amounts: {
-						twoLayers: 4,
-						threeLayers: 3,
-						fourLayers: 2,
-					},
-				},
-			],
+			currency: "€",
 		};
 	},
 	actions: {
