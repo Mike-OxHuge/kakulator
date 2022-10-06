@@ -46,7 +46,6 @@
 
 <script lang="ts" setup>
 import Result from "./Result.vue";
-import { defineProps } from "vue";
 import { useUserStore, useProductStore, useActivityStore } from "../stores";
 import type { ProductType } from "../stores/products";
 

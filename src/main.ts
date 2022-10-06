@@ -24,7 +24,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const firebaseapp = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 
 const pinia = createPinia();
 pinia.use(piniaPersist);
@@ -36,4 +36,4 @@ const i18n = createI18n({
 });
 loadFonts();
 const app = createApp(App);
-app.use(vuetify).use(pinia).use(i18n).use(firebaseapp).mount("#app");
+app.use(vuetify).use(pinia).use(i18n).mount("#app");
