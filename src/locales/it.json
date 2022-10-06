@@ -12,5 +12,10 @@
 	"profile.set.currency": "imposta la tua valuta",
 	"activities.set.layers": "fogli di carta a strati {layer} per uso",
 	"main.compare.more": "aggiungere al confronto",
-	"main.missing.settings": "impostazioni mancanti. Si prega di visitare il tuo profilo."
+	"main.missing.settings": "impostazioni mancanti. Si prega di visitare il tuo profilo.",
+	"product.name": "Nome",
+	"product.price.pack": "Price per pack",
+	"product.rolls": "Quantità di rotoli in una confezione",
+	"product.sheets": "Numero di fogli per rotolo",
+	"product.layers": "Quantità di livelli"
 }
