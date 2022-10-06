@@ -21,11 +21,23 @@
   </v-expansion-panel-title>
   <v-expansion-panel-text>
     <v-container>
-      <v-icon>mdi-delete</v-icon>
-      <p>a price of one:</p>
-      <v-icon>mdi-star-outline</v-icon>
-      <v-icon>mdi-star</v-icon>
-      <v-container v-for="activity in useActivity.activities" :key="activity.id">
+      <div class="d-flex justify-space-around">
+        <v-icon color="error" @click="useProduct.deleteProduct(product)">
+          mdi-delete
+        </v-icon>
+        <v-icon
+          :color="!!product.isFavorite ? 'warning' : 'primary'"
+          @click="useProduct.setFavorite(product, !!!product.isFavorite)"
+        >
+          mdi-{{ !!product.isFavorite ? "star" : "star-outline" }}
+        </v-icon>
+      </div>
+
+      <v-container
+        v-for="activity in useActivity.activities"
+        :key="activity.id"
+        class="pa-1"
+      >
         <Result :activity="activity" :product="product" />
       </v-container>
     </v-container>

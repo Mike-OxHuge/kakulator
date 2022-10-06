@@ -1,7 +1,7 @@
 <template>
-  <v-card>
-    <p>{{ activity.name }} with {{ product.name }}</p>
-    <p>will cost ya: {{ userSettings.currency }}{{ result }}</p>
+  <v-card class="pa-2">
+    <p class="text-primary">{{ activity.name }} 1x {{ product.name }}:</p>
+    <p class="text-secondary text-right">{{ userSettings.currency }}{{ result }}</p>
   </v-card>
 </template>
 

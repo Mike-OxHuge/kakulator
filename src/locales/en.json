@@ -12,5 +12,10 @@
 	"profile.set.currency": "set your currency",
 	"activities.set.layers": "sheets of {layer}-layer paper per use",
 	"main.compare.more": "add to comparison",
-	"main.missing.settings": "missing settings. Please visit your profile."
+	"main.missing.settings": "missing settings. Please visit your profile.",
+	"product.name": "Name",
+	"product.price.pack": "Price per pack",
+	"product.rolls": "Quantity of rolls in one pack",
+	"product.sheets": "Number of sheets per rolls",
+	"product.layers": "Amount of layers"
 }
