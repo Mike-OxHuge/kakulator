@@ -6,7 +6,6 @@ import piniaPersist from "pinia-plugin-persist";
 import { createI18n } from "vue-i18n";
 import { loadFonts } from "./plugins/webfontloader";
 import * as messages from "./locales";
-import "./registerServiceWorker";
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
