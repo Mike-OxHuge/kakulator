@@ -71,7 +71,7 @@
 		>
 			{{ t("main.compare.more") }}
 		</v-btn>
-		<v-expansion-panels>
+		<v-expansion-panels multiple>
 			<v-expansion-panel
 				v-for="product in useProduct.products"
 				:key="product.id?.toString()"

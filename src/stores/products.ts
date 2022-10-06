@@ -1,43 +1,22 @@
 import { defineStore } from "pinia";
 export interface ProductType {
 	id?: String;
+	isFavorite?: Boolean;
 	name: String;
 	price: Number;
 	rolls: Number;
 	sheets: Number;
 	layers: Number;
 }
-const productSchema: ProductType = {
-	id: "",
-	name: "",
-	price: 0,
-	rolls: 0,
-	sheets: 0,
-	layers: 0,
-};
-
-interface ResultType {
-	id: String;
-	name: String;
-	price: Number;
-}
-
-const resultSchema: ResultType = {
-	id: "",
-	name: "",
-	price: 0,
-};
 
 interface StateType {
 	products: ProductType[];
-	results: ResultType[];
 }
 
 export const useProductStore = defineStore("storeProduct", {
 	state(): StateType {
 		return {
 			products: [],
-			results: [],
 		};
 	},
 	actions: {
@@ -48,9 +27,12 @@ export const useProductStore = defineStore("storeProduct", {
 		deleteProduct(product: ProductType) {
 			return this.products.filter((prod) => prod.id !== product.id);
 		},
-		addResult(result: ResultType) {
-			const id = new Date().toString();
-			return this.results.push({ ...result, id });
+		setFavorite(product: ProductType, isFavorite: boolean) {
+			const { id } = product;
+			for (let i = 0; i < this.products.length; i++) {
+				if (this.products[i].id === id)
+					this.products[i] = { ...product, isFavorite };
+			}
 		},
 	},
 
