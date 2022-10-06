@@ -17,5 +17,7 @@
 	"product.price.pack": "Price per pack",
 	"product.rolls": "Quantità di rotoli in una confezione",
 	"product.sheets": "Numero di fogli per rotolo",
-	"product.layers": "Quantità di livelli"
+	"product.layers": "Quantità di livelli",
+
+	"error.no.result": "{action} non ha alcun valore impostato per carta di {layers}-livelli"
 }

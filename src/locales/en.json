@@ -17,5 +17,7 @@
 	"product.price.pack": "Price per pack",
 	"product.rolls": "Quantity of rolls in one pack",
 	"product.sheets": "Number of sheets per rolls",
-	"product.layers": "Amount of layers"
+	"product.layers": "Amount of layers",
+
+	"error.no.result": "{action} has no value set for {layers}-layers paper"
 }

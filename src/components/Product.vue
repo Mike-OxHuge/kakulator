@@ -46,23 +46,15 @@
 
 <script lang="ts" setup>
 import Result from "./Result.vue";
-import { defineProps, onMounted } from "vue";
+import { defineProps } from "vue";
 import { useUserStore, useProductStore, useActivityStore } from "../stores";
-const props = defineProps(["product"]);
+import type { ProductType } from "../stores/products";
+
+defineProps<{
+  product: ProductType;
+}>();
+
 const userSettings = useUserStore();
 const useProduct = useProductStore();
 const useActivity = useActivityStore();
-// onMounted(() => {
-// 	const { price, rolls, sheets, layers } = props.product;
-// 	const amountOfSheets = sheets * rolls;
-// 	const pricePerSheet = price / amountOfSheets;
-// 	useActivity.activities.forEach((act) => {
-// 		const multiplyer = act[`per${layers}`] as number;
-// 		const result = pricePerSheet * multiplyer;
-// 		console.log(
-// 			`a price of one ${act.name} will be ${userSettings.currency}${result}`
-// 		);
-// 	});
-// 	console.log(pricePerSheet);
-// });
 </script>
