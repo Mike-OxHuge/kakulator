@@ -81,7 +81,7 @@
 import Profile from "../components/Profile.vue";
 import Product from "../components/Product.vue";
 import { useUserStore, useActivityStore, useProductStore } from "../stores";
-import { onMounted, ref, computed } from "vue";
+import { ref, computed } from "vue";
 
 import { useI18n } from "vue-i18n";
 const { t } = useI18n();
