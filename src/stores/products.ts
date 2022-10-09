@@ -24,9 +24,11 @@ export const useProductStore = defineStore("storeProduct", {
 			const id = new Date().toString();
 			return this.products.push({ ...product, id });
 		},
+
 		deleteProduct(product: ProductType) {
-			return this.products.filter((prod) => prod.id !== product.id);
+			this.products = this.products.filter((p) => p.id !== product.id);
 		},
+
 		setFavorite(product: ProductType, isFavorite: boolean) {
 			const { id } = product;
 			for (let i = 0; i < this.products.length; i++) {
