@@ -34,5 +34,6 @@ const i18n = createI18n({
 	messages: { ...messages },
 });
 loadFonts();
+
 const app = createApp(App);
 app.use(vuetify).use(pinia).use(i18n).mount("#app");
