@@ -4,26 +4,12 @@
     <v-main>
       <MainView />
     </v-main>
+    <Footer />
   </v-app>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script lang="ts" setup>
 import MainView from "./blocks/MainView.vue";
 import NavBar from "./components/NavBar.vue";
-
-export default defineComponent({
-  name: "App",
-
-  components: {
-    MainView,
-    NavBar,
-  },
-
-  data() {
-    return {
-      //
-    };
-  },
-});
+import Footer from "./components/Footer.vue";
 </script>
