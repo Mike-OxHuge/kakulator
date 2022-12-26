@@ -1,11 +1,11 @@
 <template>
-	<v-app>
-		<NavBar />
-		<v-main>
-			<MainView />
-		</v-main>
-		<Footer />
-	</v-app>
+  <v-app>
+    <NavBar />
+    <v-main>
+      <MainView />
+    </v-main>
+    <Footer />
+  </v-app>
 </template>
 
 <script lang="ts" setup>

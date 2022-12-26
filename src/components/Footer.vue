@@ -1,7 +1,7 @@
 <template>
-	<v-footer app>
-		<span class="text-caption font-weight-thin text-primary"> {{ version }}</span>
-	</v-footer>
+  <v-footer app>
+    <span class="text-caption font-weight-thin text-primary"> {{ version }}</span>
+  </v-footer>
 </template>
 
 <script lang="ts" setup>
