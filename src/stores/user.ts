@@ -5,14 +5,18 @@ interface userType {
     choices: {
         [k: string]: boolean;
     };
-    currency: undefined | string;
+    currency?: string;
     language?: string;
-    theme: undefined | string;
+    theme?: string;
+    layers: {
+        [k: string]: boolean;
+    };
 }
 
 export const useUserStore = defineStore("storeUser", {
     state(): userType {
         return {
+            // undefiend values as a default (for reset)
             choices: {
                 includeTwoLayers: false,
                 includeThreeLayers: false,
@@ -22,6 +26,12 @@ export const useUserStore = defineStore("storeUser", {
             currency: undefined,
             language: undefined,
             theme: undefined,
+            layers: {
+                "1": false,
+                "2": false,
+                "3": false,
+                "4": false,
+            },
         };
     },
     actions: {
@@ -37,6 +47,9 @@ export const useUserStore = defineStore("storeUser", {
         },
         setTheme(theme: userType["theme"]) {
             this.theme = theme;
+        },
+        setLayers(key: keyof typeof this.layers, value: boolean) {
+            this.layers[key] = value;
         },
     },
 
